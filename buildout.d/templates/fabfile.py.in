@@ -5,6 +5,7 @@ from fabric.api import run
 from fabric.api import task
 
 from ade25.fabfiles import project
+from ade25.fabfiles.server import setup
 from ade25.fabfiles.server import controls
 from ade25.fabfiles import hotfix as hf
 

@@ -5,6 +5,8 @@ from fabric.api import run
 from fabric.api import task
 
 from ade25.fabfiles import project
+from ade25.fabfiles.server import setup
+from ade25.fabfiles.server import status
 from ade25.fabfiles.server import controls
 from ade25.fabfiles import hotfix as hf
 
@@ -14,11 +16,11 @@ env.port = '22222'
 env.user = 'root'
 env.code_user = 'root'
 env.prod_user = 'www'
-env.webserver = '4zu1'
-env.code_root = '4zu1'
+env.webserver = 'zope10'
+env.code_root = 'zope10'
 env.host_root = '/opt/sites'
 
-env.hosts = ['4zu1']
+env.hosts = ['zope10']
 env.hosted_sites = [
     'example.tld',
 ]
