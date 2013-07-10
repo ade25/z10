@@ -83,3 +83,18 @@ def hotfix(addon=None):
     """ Apply hotfix to all hosted sites """
     hf.prepare_sites()
     hf.process_hotfix()
+
+
+@task
+def setup_python():
+    with cd('/opt'):
+        setup.install_python()
+
+
+def initialize_server():
+    """ Initialize new server (should normally only run once) """
+    setup.install_system_libs()
+    setup.set_project_user_and_group('www', 'www')
+    setup.configure_egg_cache
+    with cd('/opt'):
+        setup.install_python()
