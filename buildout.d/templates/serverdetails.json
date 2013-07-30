@@ -1,0 +1,66 @@
+{
+  "server": "zope10",
+  "servername": "${hosts:public}",
+  "sites": [
+    {
+      "title": "${sites:zope1}",
+      "type": "plone",
+      "port": "${ports:zope1}",
+      "url": "${hosts:zope1}"
+    },
+    {
+      "title": "${sites:zope2}",
+      "type": "plone",
+      "port": "${ports:zope2}",
+      "url": "${hosts:zope2}"
+    },
+    {
+      "title": "${sites:zope3}",
+      "type": "plone",
+      "port": "${ports:zope3}",
+      "url": "${hosts:zope3}"
+    },
+    {
+      "title": "${sites:zope4}",
+      "type": "plone",
+      "port": "${ports:zope4}",
+      "url": "${hosts:zope4}"
+    },
+    {
+      "title": "${sites:zope5}",
+      "type": "plone",
+      "port": "${ports:zope5}",
+      "url": "${hosts:zope5}"
+    },
+    {
+      "title": "${sites:zope6}",
+      "type": "plone",
+      "port": "${ports:zope6}",
+      "url": "${hosts:zope6}"
+    },
+    {
+      "title": "${sites:zope7}",
+      "type": "plone",
+      "port": "${ports:zope7}",
+      "url": "${hosts:zope7}"
+    },
+    {
+      "title": "${sites:zope8}",
+      "type": "plone",
+      "port": "${ports:zope8}",
+      "url": "${hosts:zope8}"
+    },
+    {
+      "title": "${sites:zope9}",
+      "type": "plone",
+      "port": "${ports:zope9}",
+      "url": "${hosts:zope9}"
+    },
+    {
+      "title": "${sites:zope10}",
+      "type": "plone",
+      "port": "${ports:zope10}",
+      "url": "${hosts:zope10}"
+    }
+  ]
+}
