@@ -48,6 +48,12 @@ env.hosted_sites_locations = [
 
 
 @task
+def push():
+    """ Push committed local changes to git """
+    local('git push')
+
+
+@task
 def restart():
     """ Restart all """
     with cd(env.webserver):
@@ -80,19 +86,20 @@ def supervisorctl(*cmd):
 
 
 @task
-def prepare_deploy():
-    """ Push committed local changes to git """
-    local('git push')
+def deploy():
+    """ Deploy current master to production server """
+    push()
+    controls.update()
+    controls.build()
 
 
 @task
-def deploy():
-    """ Deploy current master to production server """
-    project.site.update()
-    project.site.build()
-    with cd(env.webserver):
-        run('bin/supervisorctl reread')
-        run('bin/supervisorctl update')
+def deploy_site():
+    """ Deploy a new site to production """
+    push()
+    controls.update()
+    controls.build()
+    controls.reload_supervisor()
 
 
 @task
