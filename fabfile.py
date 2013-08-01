@@ -6,7 +6,6 @@ from fabric.api import task
 
 from ade25.fabfiles import project
 from ade25.fabfiles.server import setup
-from ade25.fabfiles.server import status
 from ade25.fabfiles.server import controls
 from ade25.fabfiles import hotfix as hf
 
@@ -17,17 +16,41 @@ env.user = 'root'
 env.code_user = 'root'
 env.prod_user = 'www'
 env.webserver = 'zope10'
-env.code_root = 'zope10'
+env.code_root = '/opt/webserver/buildout.webserver'
 env.host_root = '/opt/sites'
 
 env.hosts = ['zope10']
 env.hosted_sites = [
-    'example.tld',
+    'base',
+    'gold',
+    'demo',
+    'renaissance',
+    'wiretechnologies',
+    'girocom',
+    'putzteufel',
+    'trainandmore',
+    'viyoma',
+    'zwerge',
 ]
 
 env.hosted_sites_locations = [
-    '/opt/sites/example.tld/buildout.example.tld',
+    '/opt/sites/base/buildout.base',
+    '/opt/sites/gold/buildout.gold',
+    '/opt/sites/demo/buildout.demo',
+    '/opt/sites/renaissance/buildout.renaissance',
+    '/opt/sites/wiretechnologies/buildout.wiretechnologies',
+    '/opt/sites/girocom/buildout.girocom',
+    '/opt/sites/putzteufel/buildout.putzteufel',
+    '/opt/sites/trainandmore/buildout.trainandmore',
+    '/opt/sites/viyoma/buildout.viyoma',
+    '/opt/sites/zwerge/buildout.zwerge',
 ]
+
+
+@task
+def push():
+    """ Push committed local changes to git """
+    local('git push')
 
 
 @task
@@ -63,19 +86,20 @@ def supervisorctl(*cmd):
 
 
 @task
-def prepare_deploy():
-    """ Push committed local changes to git """
-    local('git push')
+def deploy():
+    """ Deploy current master to production server """
+    push()
+    controls.update()
+    controls.build()
 
 
 @task
-def deploy():
-    """ Deploy current master to production server """
-    project.site.update()
-    project.site.build()
-    with cd(env.webserver):
-        run('bin/supervisorctl reread')
-        run('bin/supervisorctl update')
+def deploy_site():
+    """ Deploy a new site to production """
+    push()
+    controls.update()
+    controls.build()
+    controls.reload_supervisor()
 
 
 @task
@@ -83,18 +107,3 @@ def hotfix(addon=None):
     """ Apply hotfix to all hosted sites """
     hf.prepare_sites()
     hf.process_hotfix()
-
-
-@task
-def setup_python():
-    with cd('/opt'):
-        setup.install_python()
-
-
-def initialize_server():
-    """ Initialize new server (should normally only run once) """
-    setup.install_system_libs()
-    setup.set_project_user_and_group('www', 'www')
-    setup.configure_egg_cache
-    with cd('/opt'):
-        setup.install_python()
