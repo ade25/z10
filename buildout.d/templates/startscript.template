@@ -1,0 +1,56 @@
+#!/bin/sh
+
+#
+# Installation
+# ------------
+#
+# copy or symlink this script to /etc/init.d/<projectname>-start
+#
+# to add a script to the runlevels do something like this::
+#
+#   update-rc.d <projectname>-start defaults # will start it in runlevels 2345
+#
+#
+
+
+
+SUPERVISORD="${buildout:directory}/bin/supervisord"
+SUPERVISORCTL="${buildout:directory}/bin/supervisorctl"
+RETVAL=0
+
+
+start() {
+    $SUPERVISORD
+}
+
+stop() {
+    $SUPERVISORCTL shutdown
+}
+
+restart() {
+    $SUPERVISORCTL restart all
+}
+
+status() {
+    $SUPERVISORCTL status
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  status)
+    status
+    ;;
+  restart)
+    restart
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|status|restart}"
+    RETVAL=2
+esac
+
+exit $RETVAL
