@@ -1,0 +1,66 @@
+{
+  "server": "zope10",
+  "servername": "zope10.kreativkombinat.de",
+  "sites": [
+    {
+      "title": "base",
+      "type": "plone",
+      "port": "8401",
+      "url": "base.kreativkombinat.de"
+    },
+    {
+      "title": "gold",
+      "type": "plone",
+      "port": "8402",
+      "url": "evagold.de"
+    },
+    {
+      "title": "demo",
+      "type": "plone",
+      "port": "8403",
+      "url": "demo.kreativkombinat.de"
+    },
+    {
+      "title": "renaissance",
+      "type": "plone",
+      "port": "8404",
+      "url": "renaissance-interior-design.de"
+    },
+    {
+      "title": "wiretechnologies",
+      "type": "plone",
+      "port": "8405",
+      "url": "wiretechnologies.de"
+    },
+    {
+      "title": "girocom",
+      "type": "plone",
+      "port": "8406",
+      "url": "girocom.de"
+    },
+    {
+      "title": "putzteufel",
+      "type": "plone",
+      "port": "8407",
+      "url": "putzteufel-augsburg.de"
+    },
+    {
+      "title": "trainandmore",
+      "type": "plone",
+      "port": "8408",
+      "url": "trainandmore.com"
+    },
+    {
+      "title": "viyoma",
+      "type": "plone",
+      "port": "8409",
+      "url": "viyoma.de"
+    },
+    {
+      "title": "zwerge",
+      "type": "plone",
+      "port": "8410",
+      "url": "die-zwerge-live.de"
+    }
+  ]
+}
