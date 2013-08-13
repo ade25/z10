@@ -67,6 +67,13 @@ def restart_nginx():
 
 
 @task
+def nginx(*cmd):
+    """Runs an arbitrary supervisorctl command."""
+    with cd(env.webserver):
+        run('nice bin/supervisorctl ' + ' '.join(cmd) + ' nginx')
+
+
+@task
 def restart_varnish():
     """ Restart Varnish """
     controls.restart_varnish()
