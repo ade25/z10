@@ -15,11 +15,7 @@ env.port = '22222'
 env.user = 'root'
 env.code_user = 'root'
 env.prod_user = 'www'
-<<<<<<< HEAD
-env.webserver = 'zope10'
-=======
 env.webserver = '/opt/webserver/buildout.webserver'
->>>>>>> bd1315cfc9c7598acf67934ed3b895b2b261c0ab
 env.code_root = '/opt/webserver/buildout.webserver'
 env.host_root = '/opt/sites'
 
@@ -71,8 +67,6 @@ def restart_nginx():
 
 
 @task
-<<<<<<< HEAD
-=======
 def nginx(*cmd):
     """Runs an arbitrary supervisorctl command."""
     with cd(env.webserver):
@@ -80,7 +74,6 @@ def nginx(*cmd):
 
 
 @task
->>>>>>> bd1315cfc9c7598acf67934ed3b895b2b261c0ab
 def restart_varnish():
     """ Restart Varnish """
     controls.restart_varnish()
@@ -93,11 +86,13 @@ def restart_haproxy():
 
 
 @task
-<<<<<<< HEAD
-def supervisorctl(*cmd):
-=======
 def ctl(*cmd):
->>>>>>> bd1315cfc9c7598acf67934ed3b895b2b261c0ab
+    """ Runs an arbitrary supervisorctl command """
+    with cd(env.webserver):
+        run('nice bin/supervisorctl ' + ' '.join(cmd))
+
+@task
+def supervisorctl(*cmd):
     """Runs an arbitrary supervisorctl command."""
     with cd(env.webserver):
         run('nice bin/supervisorctl ' + ' '.join(cmd))
