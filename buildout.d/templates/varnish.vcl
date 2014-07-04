@@ -1,5 +1,7 @@
 vcl 4.0;
 
+import std;
+
 # Configure balancer server as back end
 backend balancer {
     .host = "${hosts:varnish-backend}";
