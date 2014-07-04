@@ -2,7 +2,7 @@
   "server": "z10",
   "servername": "${hosts:public}",
   "nginx": "1.7.2",
-  "varnish": "4.0.0",
+  "varnish": "4.0.1",
   "haproxy": "1.5.1",
   "sites": [
     {
