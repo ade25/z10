@@ -1,9 +1,9 @@
 {
   "server": "z10",
   "servername": "${hosts:public}",
-  "nginx": "1.5.0",
-  "varnish": "3.0.4",
-  "haproxy": "1.5-dev19",
+  "nginx": "1.7.2",
+  "varnish": "4.0.0",
+  "haproxy": "1.5.1",
   "sites": [
     {
       "title": "${sites:zope1}",
