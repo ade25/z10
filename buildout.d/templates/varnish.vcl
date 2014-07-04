@@ -1,7 +1,5 @@
 vcl 4.0;
 
-import std;
-
 # Configure balancer server as back end
 backend balancer {
     .host = "${hosts:varnish-backend}";
@@ -41,8 +39,7 @@ sub vcl_recv {
 }
 
 sub vcl_backend_response {
-    set beresp.ttl = 10s;
-    set beresp.grace = 1h;
+    set beresp.grace = 30m;
     if (!beresp.ttl > 0s) {
         set beresp.http.X-Varnish-Action = "FETCH (pass - not cacheable)";
         set beresp.uncacheable = true;
