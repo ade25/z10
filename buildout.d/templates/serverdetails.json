@@ -1,69 +1,81 @@
 {
-  "server": "z10",
-  "servername": "${hosts:public}",
-  "nginx": "1.7.2",
-  "varnish": "4.0.1",
-  "haproxy": "1.5.1",
+  "server": "${settings:host_id}",
+  "servername": "${settings:hostname}",
+  "nginx": "${component-versions:nginx}",
+  "varnish": "${component-versions:varnish}",
+  "haproxy": "${component-versions:haproxy}",
   "sites": [
     {
-      "title": "${sites:zope1}",
+      "title": "${site1:sitename}",
       "type": "plone",
-      "port": "${ports:zope1}",
-      "url": "${hosts:zope1}"
+      "port": "${site1:zope-port}",
+      "url": "${site1:servername}"
     },
     {
-      "title": "${sites:zope2}",
+      "title": "${site2:sitename}",
       "type": "plone",
-      "port": "${ports:zope2}",
-      "url": "${hosts:zope2}"
+      "port": "${site2:zope-port}",
+      "url": "${site2:servername}"
     },
     {
-      "title": "${sites:zope3}",
+      "title": "${site3:sitename}",
       "type": "plone",
-      "port": "${ports:zope3}",
-      "url": "${hosts:zope3}"
+      "port": "${site3:zope-port}",
+      "url": "${site3:servername}"
     },
     {
-      "title": "${sites:zope4}",
+      "title": "${site4:sitename}",
       "type": "plone",
-      "port": "${ports:zope4}",
-      "url": "${hosts:zope4}"
+      "port": "${site4:zope-port}",
+      "url": "${site4:servername}"
     },
     {
-      "title": "${sites:zope5}",
+      "title": "${site5:sitename}",
       "type": "plone",
-      "port": "${ports:zope5}",
-      "url": "${hosts:zope5}"
+      "port": "${site5:zope-port}",
+      "url": "${site5:servername}"
     },
     {
-      "title": "${sites:zope6}",
+      "title": "${site6:sitename}",
       "type": "plone",
-      "port": "${ports:zope6}",
-      "url": "${hosts:zope6}"
+      "port": "${site6:zope-port}",
+      "url": "${site6:servername}"
     },
     {
-      "title": "${sites:zope7}",
+      "title": "${site7:sitename}",
       "type": "plone",
-      "port": "${ports:zope7}",
-      "url": "${hosts:zope7}"
+      "port": "${site7:zope-port}",
+      "url": "${site7:servername}"
     },
     {
-      "title": "${sites:zope8}",
+      "title": "${site8:sitename}",
       "type": "plone",
-      "port": "${ports:zope8}",
-      "url": "${hosts:zope8}"
+      "port": "${site8:zope-port}",
+      "url": "${site8:servername}"
     },
     {
-      "title": "${sites:zope9}",
+      "title": "${site9:sitename}",
       "type": "plone",
-      "port": "${ports:zope9}",
-      "url": "${hosts:zope9}"
+      "port": "${site9:zope-port}",
+      "url": "${site9:servername}"
     },
     {
-      "title": "${sites:zope10}",
+      "title": "${site10:sitename}",
       "type": "plone",
-      "port": "${ports:zope10}",
-      "url": "${hosts:zope10}"
+      "port": "${site10:zope-port}",
+      "url": "${site10:servername}"
+    },
+    {
+      "title": "${site11:sitename}",
+      "type": "plone",
+      "port": "${site11:zope-port}",
+      "url": "${site11:servername}"
+    },
+    {
+      "title": "${site12:sitename}",
+      "type": "plone",
+      "port": "${site12:zope-port}",
+      "url": "${site12:servername}"
     }
   ]
 }
