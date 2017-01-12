@@ -30,7 +30,7 @@ env.hosted_sites = [
     'putzteufel',
     'trainandmore',
     'viyoma',
-    'zwerge',
+    'naturkost',
 ]
 
 env.hosted_sites_locations = [
@@ -43,7 +43,7 @@ env.hosted_sites_locations = [
     '/opt/sites/putzteufel/buildout.putzteufel',
     '/opt/sites/trainandmore/buildout.trainandmore',
     '/opt/sites/viyoma/buildout.viyoma',
-    '/opt/sites/zwerge/buildout.zwerge',
+    '/opt/sites/naturkost/buildout.naturkost',
 ]
 
 

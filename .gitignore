@@ -22,10 +22,16 @@ var
 *.pyo
 *-ck.js
 .codeintel
-src/plone.app.tiles
-src/plone.app.blocks
-src/plone.tiles
-src/vwc.tiles
-src/sauna.reload
-src/ade25.fabfiles
+.sublime-project
+etc/*
+etc/vhosts/*.conf
+htdocs/*.json
+src/ade25.*
+fabfile.py
+known-good-versions.cfg
 .DS_Store
+pip-selfcheck.json
+# Enable nginx specific settings
+!cache_control_assets.conf
+!disable_logging.conf
+!proxy_settings.conf
