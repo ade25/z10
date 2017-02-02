@@ -26,7 +26,7 @@ env.prod_user = 'www'
 env.webserver = '/opt/webserver/buildout.webserver'
 env.code_root = '/opt/webserver/buildout.webserver'
 env.host_root = '/opt/sites'
-env.local_dir = '/Users/sd/ops/z10'
+env.local_dir = '/Users/cb/ops/z10'
 
 env.hosts = ['z10.ade25.de']
 env.hosted_sites = {
