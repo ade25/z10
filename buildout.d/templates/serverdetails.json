@@ -76,6 +76,12 @@
       "type": "plone",
       "port": "${site12:zope-port}",
       "url": "${site12:servername}"
+    },
+    {
+      "title": "${site13:sitename}",
+      "type": "plone",
+      "port": "${site13:zope-port}",
+      "url": "${site13:servername}"
     }
   ]
 }
