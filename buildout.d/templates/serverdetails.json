@@ -30,12 +30,6 @@
       "url": "${site4:servername}"
     },
     {
-      "title": "${site5:sitename}",
-      "type": "plone",
-      "port": "${site5:zope-port}",
-      "url": "${site5:servername}"
-    },
-    {
       "title": "${site6:sitename}",
       "type": "plone",
       "port": "${site6:zope-port}",
