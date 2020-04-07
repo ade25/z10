@@ -24,12 +24,6 @@
       "url": "${site3:servername}"
     },
     {
-      "title": "${site6:sitename}",
-      "type": "plone",
-      "port": "${site6:zope-port}",
-      "url": "${site6:servername}"
-    },
-    {
       "title": "${site7:sitename}",
       "type": "plone",
       "port": "${site7:zope-port}",
